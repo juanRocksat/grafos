@@ -5,51 +5,49 @@ import java.util.Queue;
 public class Grafo
 {
  // matriz de adyacencias
- private int matriz[][];
- 
- ;
- private ArrayList<Integer> procesados = new ArrayList<Integer>();
+	private int matriz[][];
+	private ArrayList<Integer> procesados = new ArrayList<Integer>();
  
  
  // constructor, recibe la matriz de adyacencias
- public Grafo(int mat[][])
- {
-	 this.matriz = mat;
- }
-//recibe la dimension de la matriz, la instancia
-// y le asigna "infinito" a cada celda
-public Grafo(int n)
-{
-// matriz cuadrada de n filas y n columnas
-matriz = new int[n][n];
+	 public Grafo(int mat[][])
+	 {
+		 this.matriz = mat;
+	 }
+	//recibe la dimension de la matriz, la instancia
+	// y le asigna "infinito" a cada celda
+	public Grafo(int n)
+	{
+	// matriz cuadrada de n filas y n columnas
+		matriz = new int[n][n];
 
-// inicializo la matriz
-for(int i=0;i<n; i++)
-{
-for(int j=0; j<n; j++)
-{
-matriz[i][j] = Integer.MAX_VALUE;
-}
-}
-}
-// recibe la dimension de la matriz, y un conjunto de aristas
-// los nodos no afectados por las aristas no seran adyacentes
-public Grafo(int n, Arista[] arr)
-{
-// invoco al otro constructor para inicializar la matriz
-this(n);
+	// inicializo la matriz
+		for(int i=0;i<n; i++)
+		{
+		for(int j=0; j<n; j++)
+		{
+			matriz[i][j] = Integer.MAX_VALUE;
+		}
+		}
+	}
+	// recibe la dimension de la matriz, y un conjunto de aristas
+	// los nodos no afectados por las aristas no seran adyacentes
+	public Grafo(int n, Arista[] arr)
+	{
+		// invoco al otro constructor para inicializar la matriz
+		this(n);
 
-for(Arista a:arr)
-{
-addArista(a);
-}
-}
+		for(Arista a:arr)
+		{
+		addArista(a);
+		}
+	}
 // agregar una arista implica asignar la distancia
 // en las celdas correspondientes
 public void addArista(Arista a)
 {
-matriz[a.getN1()][a.getN2()]=a.getDistancia();
-matriz[a.getN2()][a.getN1()]=a.getDistancia();
+	matriz[a.getN1()][a.getN2()]=a.getDistancia();
+	matriz[a.getN2()][a.getN1()]=a.getDistancia();
 }
 // retorna los nodos adyacentes
 //public ArrayList<Integer> getVecinos(int n)
@@ -78,31 +76,32 @@ public int getDistancia(int a, int b)
 
 public void setProcesado(int n)
 {
-procesados.add(n);
+	procesados.add(n);
 }
 public boolean isProcesado(int n)
 {
-return procesados.contains(n);
+	return procesados.contains(n);
 }
 public void resetProcesados()
 {
-procesados.clear();
+	procesados.clear();
 }
 public ArrayList<Integer> getVecinos(int n)
 {
-ArrayList<Integer> a = new ArrayList<Integer>();
-for( int i=0; i<matriz.length; i++ )
-{
-if(matriz[n][i]!= Integer.MAX_VALUE)
-{
-// lo agrego solo si no fue procesado
-if(!procesados.contains(i))
-{
-a.add(i);
-}
-}
-}
-return a;
+	ArrayList<Integer> a = new ArrayList<Integer>();
+	for( int i=0; i<matriz.length; i++ )
+	{
+		if(matriz[n][i]!= Integer.MAX_VALUE)
+		{
+	// lo agrego solo si no fue procesado
+			if(!procesados.contains(i))
+			{
+				a.add(i);
+			}
+		}
+	}
+	return a;
+
 }
 public boolean hayCiclo(int nInicio, int nFin)
 {
