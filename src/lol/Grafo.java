@@ -148,4 +148,27 @@ return false;
 		// TODO Auto-generated method stub
 		return false;
 	}
+	
+	public ArrayList<Arista> getAristas()
+	 {
+	 ArrayList<Arista> arr = new ArrayList<Arista>(); for( int i=0; i<matriz.length; i++ )
+	 {
+	 for(int j=0; j<matriz.length; j++ )
+	 {
+	 if( matriz[i][j] != Integer.MAX_VALUE )
+	 {
+	 Arista a = new Arista(i, j, matriz[i][j]);
+	 // recordemos que sobrescribimos el metodo
+	 // equals indicando que la arista (a,b)
+	 // identica a la arista (b,a)
+	 if( !arr.contains(a) )
+	 {
+	 arr.add(a);
+	 }
+	 }
+	 }
+	 }
+	 return arr;
+	 }
+
 }

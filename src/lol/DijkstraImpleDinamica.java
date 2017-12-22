@@ -63,5 +63,6 @@ public class DijkstraImpleDinamica implements Dijkstra{
 	 }
 	 return pos;
 	 }
+	 
 	
 }
