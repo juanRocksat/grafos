@@ -18,7 +18,7 @@ public class TestDijkstra {
 	 // defino el nodo de origen
 	 int origen = Integer.parseInt(args[0]);
 
-	 Dijkstra d = new DijkstraImpleGredy();
+	 Dijkstra d = new DijkstraImpleGreddy();
 	 Hashtable<Integer, Integer> minimos = d.procesar(g, origen);
 	 // muestro los resultados
 	 System.out.println(minimos);

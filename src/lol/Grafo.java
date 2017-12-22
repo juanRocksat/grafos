@@ -144,4 +144,8 @@ return false;
 		 // instancio el grafo a partir de su matriz de adyacencias
 		 Grafo g = new Grafo(mAdy);
 	}
+	public boolean isVisitado(int i) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

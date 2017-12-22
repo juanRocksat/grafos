@@ -5,7 +5,7 @@ import java.util.Hashtable;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class DijkstraImpleGredy implements Dijkstra {
+public class DijkstraImpleGreddy implements Dijkstra {
 	public Hashtable<Integer, Integer> procesar(Grafo g, int s)
 	 {
 	 // asigno "infinito" a cada posicion de distMin
