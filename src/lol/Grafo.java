@@ -105,30 +105,30 @@ public ArrayList<Integer> getVecinos(int n)
 }
 public boolean hayCiclo(int nInicio, int nFin)
 {
-// resguardo el estado actual de los nodos procesados
-ArrayList<Integer> bkpProcesados = (ArrayList<Integer>) procesados.clone();
-resetProcesados();
-// encolo b y veo si llego hasta a
-Queue<Integer> q = new LinkedList<Integer>();
-q.add(nInicio);
-while( !q.isEmpty() )
-{
-int n = q.poll();
-if( n==nFin )
-{
-return true;
-}
-setProcesado(n);
-// obtengo los vecinos
-ArrayList<Integer> vecinos = getVecinos(n);
-for(int x: vecinos)
-{
-q.add(x);
-}
-}
-// restauro el estado de nodos procesados que el grafo tenia al inicio
-procesados = bkpProcesados;
-return false;
+	// resguardo el estado actual de los nodos procesados
+	ArrayList<Integer> bkpProcesados = (ArrayList<Integer>) procesados.clone();
+	resetProcesados();
+	// encolo b y veo si llego hasta a
+	Queue<Integer> q = new LinkedList<Integer>();
+	q.add(nInicio);
+	while( !q.isEmpty() )
+	{
+		int n = q.poll();
+		if( n==nFin )
+		{
+			return true;
+		}
+		setProcesado(n);
+	// obtengo los vecinos
+		ArrayList<Integer> vecinos = getVecinos(n);
+		for(int x: vecinos)
+		{
+			q.add(x);
+		}
+	}
+	// restauro el estado de nodos procesados que el grafo tenia al inicio
+	procesados = bkpProcesados;
+	return false;
 }
 	public static void main(String[] args) {
 		int i = Integer.MAX_VALUE;
@@ -150,23 +150,23 @@ return false;
 	
 	public ArrayList<Arista> getAristas()
 	 {
-	 ArrayList<Arista> arr = new ArrayList<Arista>(); for( int i=0; i<matriz.length; i++ )
-	 {
-	 for(int j=0; j<matriz.length; j++ )
-	 {
-	 if( matriz[i][j] != Integer.MAX_VALUE )
-	 {
-	 Arista a = new Arista(i, j, matriz[i][j]);
+		ArrayList<Arista> arr = new ArrayList<Arista>(); for( int i=0; i<matriz.length; i++ )
+		{
+			for(int j=0; j<matriz.length; j++ )
+			{
+				if( matriz[i][j] != Integer.MAX_VALUE )
+				{
+					Arista a = new Arista(i, j, matriz[i][j]);
 	 // recordemos que sobrescribimos el metodo
 	 // equals indicando que la arista (a,b)
 	 // identica a la arista (b,a)
-	 if( !arr.contains(a) )
-	 {
-	 arr.add(a);
-	 }
-	 }
-	 }
-	 }
+					if( !arr.contains(a) )
+					{
+						arr.add(a);
+					}
+				}
+			}
+		}
 	 return arr;
 	 }
 
