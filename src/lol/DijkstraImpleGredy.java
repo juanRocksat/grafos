@@ -47,7 +47,15 @@ public class DijkstraImpleGredy implements Dijkstra {
 
 	 return distMin;
 	 }
-
+	
+	
+	 private void inicializar(Hashtable<Integer, Integer> tdist, int size, int val)
+	 {
+	 for(int i=0; i<size;i++)
+	 {
+	 tdist.put(i,val);
+	 }
+	 }
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
