@@ -1,4 +1,4 @@
-package lol;
+package algoritmos_grafos;
 public class Arista
 {
  private int n1; private int n2; private int distancia;

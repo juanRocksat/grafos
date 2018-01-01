@@ -1,4 +1,4 @@
-package lol;
+package algoritmos_grafos;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

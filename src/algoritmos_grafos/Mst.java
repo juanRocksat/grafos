@@ -1,4 +1,4 @@
-package lol;
+package algoritmos_grafos;
 
 public interface Mst {
 	// retorna el arbol generador minimo del grafo g a partir del vertice n

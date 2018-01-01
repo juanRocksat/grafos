@@ -1,4 +1,4 @@
-package lol;
+package algoritmos_grafos;
 
 import java.util.ArrayList;
 
@@ -12,7 +12,7 @@ public class MstImplePrim implements Mst {
 	 // en cada iteracion procesamos al nodo n, comenzando por s
 	 int n = s; for(int i=0; i<g.size()-1; i++)
 	 {
-	 // marco a n como “procesado” y lo incorporo al array
+	 // marco a n como ï¿½procesadoï¿½ y lo incorporo al array
 	 g.setProcesado(n);
 	 incorporados.add(n);
 

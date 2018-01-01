@@ -1,4 +1,4 @@
-package lol;
+package algoritmos_grafos;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -23,7 +23,7 @@ public class MstImpleKruskal implements Mst{
 		 // tomo la primer arista del array, la de menor peso
 		 Arista a = aristas.get(0);
 
-		 // si no hay ciclo la agrego y cuento “una arista mas”
+		 // si no hay ciclo la agrego y cuento ï¿½una arista masï¿½
 		 if( !solu.hayCiclo(a.getN1(),a.getN2()) )
 		 {
 		 solu.addArista(a);
